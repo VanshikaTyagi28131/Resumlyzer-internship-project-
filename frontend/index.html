@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumlyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+        </button>
+        <section class="hero">
+            <h1>Resumlyzer</h1>
+            <p>AI-Powered Resume Analyzer</p>
+        </section>
+        <section class="job-description-section">
+            <label for="job-description">Job Description</label>
+            <textarea
+                id="job-description"
+                placeholder="Paste the complete job description here..."
+                rows="10"
+            ></textarea>
+        </section>
+        <section class="upload-section">
+            <label for="resume-upload">Upload Resume (PDF)</label>
+            <input
+                type="file"
+                id="resume-upload"
+                accept=".pdf"
+            >
+        </section>
+        <section class="button-section">
+            <button id="analyze-btn">
+                Analyze Resume
+            </button>
+        </section>
+        <section id="loading" class="hidden">
+            <p>Analyzing your resume...</p>
+        </section>
+        <section id="results" class="hidden">
+            <div class="result-card score-card">
+                <h2>ATS Score</h2>
+                <div class="score-circle">
+                    <span id="ats-score">0%</span>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h2>Resume Statistics</h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-box">
+                        <h3 id="page-count">0</h3>
+                        <p>Pages</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3 id="word-count">0</h3>
+                        <p>Words</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3 id="skills-count">0</h3>
+                        <p>Skills</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3 id="projects-count">0</h3>
+                        <p>Projects</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h2>Overall Analysis</h2>
+                <p id="resume-summary"></p>
+            </div>
+
+            <div class="result-card">
+                <h2>Matched Skills</h2>
+                <ul id="matched-skills-list"></ul>
+            </div>
+
+            <div class="result-card">
+                <h2>Missing Skills</h2>
+                <ul id="missing-skills-list"></ul>
+            </div>
+
+            <div class="result-card">
+                <h2>Keyword Match</h2>
+                <ul id="keyword-match-list"></ul>
+            </div>
+
+            <div class="result-card">
+                <h2>Strengths</h2>
+                <ul id="strengths-list"></ul>
+            </div>
+
+            <div class="result-card">
+
+                <h2>Suggestions</h2>
+
+                <ul id="suggestions-list"></ul>
+
+            </div>
+
+            <div class="button-section">
+
+                <button id="download-report">
+                    Download Report
+                </button>
+
+                <button id="analyze-again">
+                    Analyze Another Resume
+                </button>
+
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
