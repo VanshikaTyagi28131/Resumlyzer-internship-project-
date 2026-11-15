@@ -69,7 +69,7 @@ async function extractResumeText(file) {
 async function analyzeWithGemini(resumeText, jobDescription) {
 
     const response = await fetch(
-        "/api/analyze",,
+        "/api/analyze",
         {
             method: "POST",
 
